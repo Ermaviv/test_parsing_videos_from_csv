@@ -6,12 +6,16 @@ import main
 class TestValidation:
     def test_create_parser(self):
         parser = main.create_parser()
-        args = parser.parse_args(["--files", "fix_data_1.csv", "--report", "clickbait"])
+        args = parser.parse_args(
+            ["--files", "fix_data_1.csv", "--report", "clickbait"]
+        )
         assert args.files == ["fix_data_1.csv"]
 
     def test_create_parser_2(self):
         parser = main.create_parser()
-        args = parser.parse_args(["--files", "fix_data_1.csv", "--report", "clickbait"])
+        args = parser.parse_args(
+            ["--files", "fix_data_1.csv", "--report", "clickbait"]
+        )
         assert args.report == "clickbait"
 
     @pytest.mark.parametrize(
