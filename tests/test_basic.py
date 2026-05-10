@@ -26,7 +26,10 @@ class TestValidation:
 
     def test_write_to_file(self, file_names, sort_extract_data):
         main.write_to_file(file_names['REPORT_test'], sort_extract_data)
-        with (open(
+        with (
+            open(
                 file_names['REPORT_test'], 'r', encoding='utf-8') as test_file,
-            open(file_names['REPORT_fix'], 'r', encoding='utf-8') as fix_file):
+            open(
+                file_names['REPORT_fix'], 'r', encoding='utf-8') as fix_file
+        ):
             assert test_file.read() == fix_file.read()
